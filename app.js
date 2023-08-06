@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const grammy  = require('./controllers/grammy');
+app.use('/controller', grammy);
 const songsRoute = require('./routes/songs');
 app.use('/songs', songsRoute);
 
